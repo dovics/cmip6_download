@@ -1,0 +1,7 @@
+*.nc
+*.status
+__pycache__/
+.venv/
+
+wget-log
+wget-log*
