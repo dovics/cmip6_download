@@ -1,5 +1,6 @@
 from pathlib import Path
 import xarray as xr
+import dask
 
 use_cache = True
 cmip6_data_dir = "data"
@@ -16,10 +17,10 @@ cmip6_model_list = [
     "KACE-1-0-G",
     "MIROC6",
     "MIROC-ES2L",
-    "MPI-ESM1-2-HR",
-    "MRI-ESM2-0",
-    "NorESM2-MM",
-    "UKESM1-0-LL",
+    # "MPI-ESM1-2-HR",
+    # "MRI-ESM2-0",
+    # "NorESM2-MM",
+    # "UKESM1-0-LL",
 ]
 
 def range_cmip6_origin_data(process_func):
@@ -39,7 +40,8 @@ def clip_nc_file(path: Path):
         print(f"Using cached data {target}")
         return target
 
-    ds = xr.load_dataset(path)
+    ds = xr.open_dataset(path, chunks={
+        "time": 18250, "lon":-1, "lat": -1})
     # 选择 lat 和 lon 范围内的数据
     clipped_da = ds[key].sel(lat=slice(30, 55), lon=slice(70, 100))
     clipped_da.to_netcdf(target)

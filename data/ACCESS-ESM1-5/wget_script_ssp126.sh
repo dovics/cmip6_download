@@ -26,7 +26,6 @@ search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.ScenarioMIP.C
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-
 'tasmin_day_ACCESS-ESM1-5_ssp126_r8i1p1f1_gn_20150101-20641231.nc' 'https://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp126/r8i1p1f1/day/tasmin/gn/v20210318/tasmin_day_ACCESS-ESM1-5_ssp126_r8i1p1f1_gn_20150101-20641231.nc' 'SHA256' '23188e42aa55ca35f2da399005bba1bf8800cb509e0c6fb4bfb29a9f3a7afda2'
 'tasmin_day_ACCESS-ESM1-5_ssp126_r8i1p1f1_gn_20650101-21001231.nc' 'https://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp126/r8i1p1f1/day/tasmin/gn/v20210318/tasmin_day_ACCESS-ESM1-5_ssp126_r8i1p1f1_gn_20650101-21001231.nc' 'SHA256' '988f8beb781da3783b63fc94dde53f6c5ba02c4318c75d4d0cbf1645f6f22007'
 'sfcWind_day_ACCESS-ESM1-5_ssp126_r4i1p1f1_gn_20150101-20641231.nc' 'https://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp126/r4i1p1f1/day/sfcWind/gn/v20210318/sfcWind_day_ACCESS-ESM1-5_ssp126_r4i1p1f1_gn_20150101-20641231.nc' 'SHA256' '9953e89cc12fd71c6d8860a6eed531bda5aaebdfa05bbc918f3b4f2ffd284124'

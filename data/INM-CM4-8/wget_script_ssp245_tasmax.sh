@@ -25,8 +25,8 @@ search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.ScenarioMIP.I
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-'tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmax/gr1/v20190603/tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'SHA256' 'c2688abccc7a2331308b745ce45d1ae52ef3f7bf864000b429dd161fe6ca759f'
-'tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmax/gr1/v20190603/tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'SHA256' '21acf7b8fa4128f7244b014e318a314d337e5322cad3b574be058a04c1f42015'
+'tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'http://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmax/gr1/v20190603/tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'SHA256' 'c2688abccc7a2331308b745ce45d1ae52ef3f7bf864000b429dd161fe6ca759f'
+'tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'http://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmax/gr1/v20190603/tasmax_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'SHA256' '21acf7b8fa4128f7244b014e318a314d337e5322cad3b574be058a04c1f42015'
 EOF--dataset.file.url.chksum_type.chksum
 )"
 

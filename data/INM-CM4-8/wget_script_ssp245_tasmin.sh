@@ -25,10 +25,11 @@ search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.ScenarioMIP.I
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-'tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmin/gr1/v20190603/tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'SHA256' '30fedfefbe188e07c5bfadfb2d468c366cb9a62d61bce9d2fb1b61abd283ed1f'
-'tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmin/gr1/v20190603/tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'SHA256' 'e1af5693cfaff1107c8eaac4254b71dada896d50264530bee882da8a26bc26dd'
+'tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'http://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmin/gr1/v20190603/tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'SHA256' '30fedfefbe188e07c5bfadfb2d468c366cb9a62d61bce9d2fb1b61abd283ed1f'
+'tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'http://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/tasmin/gr1/v20190603/tasmin_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'SHA256' 'e1af5693cfaff1107c8eaac4254b71dada896d50264530bee882da8a26bc26dd'
 EOF--dataset.file.url.chksum_type.chksum
 )"
+
 
 # ESG_HOME should point to the directory containing ESG credentials.
 #   Default is $HOME/.esg

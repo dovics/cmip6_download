@@ -25,8 +25,8 @@ search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.ScenarioMIP.I
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-'rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/rsds/gr1/v20190603/rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'SHA256' 'be52569bd6dc18e2cdabd941f9ef8c8c4c7901030a787a112698c13ec2585f60'
-'rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/rsds/gr1/v20190603/rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'SHA256' '69f772eb2614a71eac47ccc0a123aac83577204e9a4fb467cd8410273c229d48'
+'rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'https://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/rsds/gr1/v20190603/rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20150101-20641231.nc' 'SHA256' 'be52569bd6dc18e2cdabd941f9ef8c8c4c7901030a787a112698c13ec2585f60'
+'rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'https://esgf-data1.llnl.gov/thredds/fileServer/css03_data/CMIP6/ScenarioMIP/INM/INM-CM4-8/ssp245/r1i1p1f1/day/rsds/gr1/v20190603/rsds_day_INM-CM4-8_ssp245_r1i1p1f1_gr1_20650101-21001231.nc' 'SHA256' '69f772eb2614a71eac47ccc0a123aac83577204e9a4fb467cd8410273c229d48'
 EOF--dataset.file.url.chksum_type.chksum
 )"
 
