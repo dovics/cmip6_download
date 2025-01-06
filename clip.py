@@ -1,6 +1,8 @@
 from pathlib import Path
 import xarray as xr
 import dask
+from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor
 
 use_cache = True
 cmip6_data_dir = "data"
@@ -24,13 +26,29 @@ cmip6_model_list = [
 ]
 
 def range_cmip6_origin_data(process_func):
+    total_files = 0
     for model in cmip6_model_list:
-        for file in Path(cmip6_data_dir).joinpath(model).rglob(f'*.nc'):
-            if file.name.endswith(".clipped.nc"):
-                continue
-            print(f"{file} start processing")
-            if file.is_file():
-                process_func(file)
+        filelist = Path(cmip6_data_dir).joinpath(model).rglob(f'*.nc')
+        for file in filelist:
+            if not file.name.endswith(".clipped.nc"):
+                total_files += 1
+
+    with tqdm(total=total_files, desc="Processing files") as pbar:
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            futures = []
+            for model in cmip6_model_list:
+                filelist = Path(cmip6_data_dir).joinpath(model).rglob(f'*.nc')
+                for file in filelist:
+                    if file.name.endswith(".clipped.nc"):
+                        continue
+                    
+                    print(f"{file} start processing")
+                    future = executor.submit(process_func, file)
+                    futures.append(future)
+            
+            for future in futures:
+                future.result()  # 等待所有任务完成
+                pbar.update(1)
 
 
 def clip_nc_file(path: Path):
