@@ -25,7 +25,6 @@ search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.CMIP.IPSL.IPS
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-'hur_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_18500101-19491231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r10i1p1f1/day/hur/gr/v20180803/hur_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_18500101-19491231.nc' 'SHA256' '36c4a41213633b25b5b14b7ace118602ab7e61d41c94b5ae141c10d15dd309c7'
 'hur_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_19500101-20141231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r10i1p1f1/day/hur/gr/v20180803/hur_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_19500101-20141231.nc' 'SHA256' '38cd4b47e62e1325c405703f2a8f47ed0df1d342b3da779b997ba15a6658df2b'
 'rsds_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_18500101-20141231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r10i1p1f1/day/rsds/gr/v20180803/rsds_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_18500101-20141231.nc' 'SHA256' '698c5e9f26407fc8aa0b24650c904b974f2ad1ef2deb654b193aeae2e59ac043'
 'sfcWind_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_18500101-20141231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/IPSL/IPSL-CM6A-LR/historical/r10i1p1f1/day/sfcWind/gr/v20180803/sfcWind_day_IPSL-CM6A-LR_historical_r10i1p1f1_gr_18500101-20141231.nc' 'SHA256' 'fca8b77bce40e95abdbcb3e8108b4327631070fed287c10df852bc1beee28bde'

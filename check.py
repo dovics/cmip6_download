@@ -36,7 +36,7 @@ def check_data_completeness(data_dir):
 
     file_pattern = re.compile(
         r"^(?P<variable>\w+)_day_(?P<model>[\w-]+)_(?P<scenario>\w+)_"
-        r"(?P<batch>\w+)_gn_(?P<start_time>\d{8})-(?P<end_time>\d{8})\.clipped\.nc$"
+        r"(?P<batch>\w+)_(gn|gr|gr1)_(?P<start_time>\d{8})-(?P<end_time>\d{8})\.clipped\.nc$"
     )
 
     grouped_files = {}
@@ -73,20 +73,19 @@ def check_data_completeness(data_dir):
         end_dates.sort()
 
         if scenario == "historical":
-            expected_start = datetime(1950, 1, 1)
-            expected_end = datetime(2014, 12, 31)
+            expected_start = datetime(1960, 1, 1)
+            expected_end = datetime(2014, 12, 30)
         else:
             expected_start = datetime(2015, 1, 1)
-            expected_end = datetime(2100, 12, 31)
+            expected_end = datetime(2100, 12, 30)
         
         missing_data = []
         if start_dates[0] > expected_start or end_dates[-1] < expected_end:
             missing_data.append(f"Expected range {expected_start.strftime('%Y%m%d')}-{expected_end.strftime('%Y%m%d')}, found {start_dates[0].strftime('%Y%m%d')}-{end_dates[-1].strftime('%Y%m%d')}")
-            
-            # Check for gaps in the data
-            for i in range(len(start_dates) - 1):
-                if (end_dates[i] + timedelta(days=1)) != start_dates[i+1]:
-                    missing_data.append(f"Gap in data: {end_dates[i].strftime('%Y%m%d')}-{start_dates[i+1].strftime('%Y%m%d')}")
+        
+        for i in range(len(start_dates) - 1):
+            if (end_dates[i] + timedelta(days=1)) != start_dates[i+1] and (end_dates[i] + timedelta(days=2)) != start_dates[i+1]:
+                missing_data.append(f"Gap in data: {end_dates[i].strftime('%Y%m%d')}-{start_dates[i+1].strftime('%Y%m%d')}")
         
         if missing_data:
             output_data[model][f"{variable}_{scenario}"] = "; ".join(missing_data)

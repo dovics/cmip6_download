@@ -25,29 +25,24 @@ cmip6_model_list = [
     "UKESM1-0-LL",
 ]
 
+
 def range_cmip6_origin_data(process_func):
     total_files = 0
     for model in cmip6_model_list:
-        filelist = Path(cmip6_data_dir).joinpath(model).rglob(f'*.nc')
+        filelist = Path(cmip6_data_dir).joinpath(model).rglob(f"*.nc")
         for file in filelist:
             if not file.name.endswith(".clipped.nc"):
                 total_files += 1
 
     with tqdm(total=total_files, desc="Processing files") as pbar:
-        with ThreadPoolExecutor(max_workers=1) as executor:
-            futures = []
-            for model in cmip6_model_list:
-                filelist = Path(cmip6_data_dir).joinpath(model).rglob(f'*.nc')
-                for file in filelist:
-                    if file.name.endswith(".clipped.nc"):
-                        continue
-                    
-                    print(f"{file} start processing")
-                    future = executor.submit(process_func, file)
-                    futures.append(future)
-            
-            for future in futures:
-                future.result()  # 等待所有任务完成
+        for model in cmip6_model_list:
+            filelist = Path(cmip6_data_dir).joinpath(model).rglob(f"*.nc")
+            for file in filelist:
+                if file.name.endswith(".clipped.nc"):
+                    continue
+
+                print(f"{file} start processing")
+                process_func(file)
                 pbar.update(1)
 
 
@@ -58,13 +53,11 @@ def clip_nc_file(path: Path):
         print(f"Using cached data {target}")
         return target
 
-    ds = xr.open_dataset(path, chunks={
-        "time": 18250, "lon":-1, "lat": -1})
+    ds = xr.open_dataset(path, chunks={"time": 18250, "lon": -1, "lat": -1})
     # 选择 lat 和 lon 范围内的数据
     clipped_da = ds[key].sel(lat=slice(30, 55), lon=slice(70, 100))
     clipped_da.to_netcdf(target)
     return target
-
 
 
 range_cmip6_origin_data(clip_nc_file)
