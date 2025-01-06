@@ -17,10 +17,10 @@ cmip6_model_list = [
     "KACE-1-0-G",
     "MIROC6",
     "MIROC-ES2L",
-    # "MPI-ESM1-2-HR",
-    # "MRI-ESM2-0",
-    # "NorESM2-MM",
-    # "UKESM1-0-LL",
+    "MPI-ESM1-2-HR",
+    "MRI-ESM2-0",
+    "NorESM2-MM",
+    "UKESM1-0-LL",
 ]
 
 def range_cmip6_origin_data(process_func):
