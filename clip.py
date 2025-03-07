@@ -7,24 +7,34 @@ from concurrent.futures import ThreadPoolExecutor
 use_cache = True
 cmip6_data_dir = "data"
 cmip6_model_list = [
-    "ACCESS-CM2",
-    "ACCESS-ESM1-5",
-    "BCC-CSM2-MR",
-    "CanESM5",
-    "EC-Earth3",
-    "FGOALS-g3",
+    # "ACCESS-CM2",
+    # "ACCESS-ESM1-5",
+    # "BCC-CSM2-MR",
+    # "CanESM5",
+    # "EC-Earth3",
+    # "FGOALS-g3",
     "INM-CM4-8",
     "INM-CM5-0",
     "IPSL-CM6A-LR",
     "KACE-1-0-G",
     "MIROC6",
     "MIROC-ES2L",
-    "MPI-ESM1-2-HR",
-    "MRI-ESM2-0",
-    "NorESM2-MM",
-    "UKESM1-0-LL",
+    # "MPI-ESM1-2-HR",
+    # "MRI-ESM2-0",
+    # "NorESM2-MM",
+    # "UKESM1-0-LL",
 ]
 
+variables= [ "hurs" ]
+
+def contain_variables(path: Path):
+    if isinstance(path, str):
+        path = Path(path)
+        
+    for var in variables:
+        if var in path.name:
+            return True
+    return False
 
 def range_cmip6_origin_data(process_func):
     total_files = 0
@@ -46,7 +56,10 @@ def range_cmip6_origin_data(process_func):
                 pbar.update(1)
 
 
+
 def clip_nc_file(path: Path):
+    if not contain_variables(path):
+        return
     key = path.name.split("_")[0]
     target = path.with_suffix(".clipped.nc")
     if use_cache and target.exists():

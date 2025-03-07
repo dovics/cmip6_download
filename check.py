@@ -11,7 +11,17 @@ def check_data_completeness(data_dir):
         data_dir (str): The path to the directory containing the data files.
     """
 
-    required_vars = ["hur", "pr", "rsds", "sfcWind", "tas", "tasmin", "tasmax"]
+    required_vars = [
+        # "hur",
+        "hurs", 
+        # "pr", 
+        # "rsds", 
+        # "sfcWind", 
+        # "tas", 
+        # "tasmin", 
+        # "tasmax"
+    ]
+    
     required_models = [
         "ACCESS-CM2",
         "ACCESS-ESM1-5",
