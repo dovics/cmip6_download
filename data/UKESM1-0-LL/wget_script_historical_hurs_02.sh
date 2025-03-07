@@ -25,7 +25,6 @@ search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.CMIP.MOHC.UKE
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-'hurs_day_UKESM1-0-LL_historical_r10i1p1f2_gn_18500101-19491230.nc' 'https://esgf.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r10i1p1f2/day/hurs/gn/v20191213/hurs_day_UKESM1-0-LL_historical_r10i1p1f2_gn_18500101-19491230.nc' 'SHA256' '6a9fa259687de7e6b2340bd4192ac61d158886322a6e07cc238f37a03910f84d'
 'hurs_day_UKESM1-0-LL_historical_r10i1p1f2_gn_19500101-20141230.nc' 'https://esgf.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r10i1p1f2/day/hurs/gn/v20191213/hurs_day_UKESM1-0-LL_historical_r10i1p1f2_gn_19500101-20141230.nc' 'SHA256' 'd9055a3f01311368ecc960c7ba891ae26cb8b100bca48cd2c8b612f6ad3ce228'
 EOF--dataset.file.url.chksum_type.chksum
 )"

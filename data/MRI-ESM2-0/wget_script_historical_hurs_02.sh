@@ -24,13 +24,18 @@ openId=
 search_url='http://localhost:8080/esg-search/wget?dataset_id=CMIP6.CMIP.MRI.MRI-ESM2-0.historical.r2i1p1f1.day.hurs.gn.v20190603|aims3.llnl.gov'
 
 #These are the embedded files to be downloaded
+# download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
+# 'hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_19500101-19991231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r2i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_19500101-19991231.nc' 'SHA256' '4ef022595886a38d0b2a31a6791007d5600e2d95061a72b4e3407233e7eb9e7c'
+# 'hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_20000101-20141231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r2i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_20000101-20141231.nc' 'SHA256' '969e606e792ff82c9d2cdd4fe45aebc61b7dd889d498f9f57f04e6ed7f2594e1'
+# EOF--dataset.file.url.chksum_type.chksum
+# )"
+
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-'hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_18500101-18991231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r2i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_18500101-18991231.nc' 'SHA256' '74762291ba570fc2dc1e77b41d5c7605666f8e2082fca161643cbe108ce1c7d8'
-'hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_19000101-19491231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r2i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_19000101-19491231.nc' 'SHA256' 'ec895c53b876649403b96735a24c0a873f4d4f72acfc01de93e2dec21e604941'
-'hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_19500101-19991231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r2i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_19500101-19991231.nc' 'SHA256' '4ef022595886a38d0b2a31a6791007d5600e2d95061a72b4e3407233e7eb9e7c'
-'hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_20000101-20141231.nc' 'http://aims3.llnl.gov/thredds/fileServer/css03_data/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r2i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r2i1p1f1_gn_20000101-20141231.nc' 'SHA256' '969e606e792ff82c9d2cdd4fe45aebc61b7dd889d498f9f57f04e6ed7f2594e1'
+'hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231.nc' 'https://esgf.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r1i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_19500101-19991231.nc' 'SHA256' 'f4d4d9b5bbe5a9ddca1b9427ddb5e2f7f1af207cae04b441a12c6528f73f66d8'
+'hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231.nc' 'https://esgf.ceda.ac.uk/thredds/fileServer/esg_cmip6/CMIP6/CMIP/MRI/MRI-ESM2-0/historical/r1i1p1f1/day/hurs/gn/v20190603/hurs_day_MRI-ESM2-0_historical_r1i1p1f1_gn_20000101-20141231.nc' 'SHA256' '180af1f028111de5499d91761a0d65cdc75ec30beaeb88939ebf02b2c5e92a2d'
 EOF--dataset.file.url.chksum_type.chksum
 )"
+
 
 # ESG_HOME should point to the directory containing ESG credentials.
 #   Default is $HOME/.esg
